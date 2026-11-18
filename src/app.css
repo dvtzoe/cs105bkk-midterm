@@ -1,0 +1,95 @@
+/* Maple Mono — bundled so the PDF never depends on system fonts. */
+@import '@fontsource/maple-mono/400.css';
+@import '@fontsource/maple-mono/400-italic.css';
+@import '@fontsource/maple-mono/700.css';
+@import '@fontsource/maple-mono/700-italic.css';
+
+/*
+ * Design tokens, taken from Maple Dark (src/lib/theme/maple-dark.json).
+ * Change colors here and every component follows.
+ */
+:root {
+  /* surfaces */
+  --bg: #1e1e1f; /* editor.background */
+  --bg-deep: #171718; /* sideBar / titleBar */
+  --bg-raised: #232a39; /* editorWidget / active tab */
+  --selection: #334155; /* list.activeSelectionBackground */
+  --border: #44444b; /* widget.border */
+
+  /* text */
+  --fg: #cbd5e1; /* editor.foreground */
+  --fg-muted: #999999; /* comments / line numbers */
+  --fg-strong: #f1f5f9;
+
+  /* accents (syntax colors) */
+  --blue: #8fc7ff;
+  --lavender: #d2ccff;
+  --sky: #b8d7f9;
+  --peach: #f0c0a8;
+  --sand: #eecfa0;
+  --red: #edabab;
+  --green: #a4dfae;
+  --pink: #e3cbeb;
+  --cyan: #a1e8e5;
+  --lime: #d5f288;
+  --steel: #6285a7; /* button / tab.activeBorderTop */
+
+  /* type */
+  --font: 'Maple Mono', ui-monospace, monospace;
+  --text-sm: 26px;
+  --text-md: 30px;
+  --text-lg: 44px;
+  --text-xl: 64px;
+  --text-xxl: 96px;
+  --code-size: 30px;
+
+  /* spacing / shape — slides are authored at 1920×1080 */
+  --pad-x: 96px;
+  --pad-y: 72px;
+  --gap: 40px;
+  --radius: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg-deep);
+  color: var(--fg);
+  font-family: var(--font);
+  /* ligatures on (calt + liga) */
+  font-feature-settings: 'calt' 1, 'liga' 1;
+  font-variant-ligatures: contextual common-ligatures;
+  -webkit-font-smoothing: antialiased;
+}
+
+code,
+pre {
+  font-family: var(--font);
+}
+
+/* inline `code` inside prose */
+:not(pre) > code {
+  color: var(--peach);
+  background: var(--bg-raised);
+  padding: 0.05em 0.35em;
+  border-radius: 6px;
+}
+
+strong {
+  color: var(--fg-strong);
+}
+em {
+  color: var(--lavender);
+}
+
+@page {
+  size: 1920px 1080px;
+  margin: 0;
+}
