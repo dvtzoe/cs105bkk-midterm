@@ -1,10 +1,15 @@
+class Life():
+    def meaning():
+        return "42"
 class Animal:
-    def speak(self): return "..."
-class Cat(Animal):                 # Cat IS an Animal
-    def speak(self): return "meow"
-
-class Engine:
-    def start(self): return "vroom"
-class Car:                         # Car HAS an Engine
-    def __init__(self): self.engine = Engine()
-print(Cat().speak(), Car().engine.start())
+    def __init__(self):
+        self.life = Life()
+    def die(self):
+        return "dead"
+class Cow(Animal):  # Cow is an Animal 
+    def __init__(self):
+        super().__init__()
+    def die(self):
+        return "deadbeef"
+print(Cow().die(), Cow().life.meaning())
+# comment to make the code horizontally long so it resize the container

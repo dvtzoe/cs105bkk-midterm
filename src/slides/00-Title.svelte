@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { Slide } from '$lib';
+  import { Slide } from "$lib";
 </script>
 
 <!-- TODO: put your name in -->
 <Slide center>
-  <p class="course">CS105BKK · Intro to Programming 2 · Midterm</p>
-  <h1>Python, <em>explained</em><br />in 10 questions</h1>
-  <p class="who">Your Name</p>
-  <p class="date">Wednesday 18 November 2026</p>
+  <h1>cs105bkk-midterm</h1>
+  <!-- <p class="course">CS105BKK · Intro to Programming 2 · Midterm</p> -->
+  <!-- <h1>Python, <em>explained</em><br />in 10 questions</h1> -->
+  <!-- <p class="who">Your Name</p> -->
+  <!-- <p class="date">Wednesday 18 November 2026</p> -->
 </Slide>
 
 <style>

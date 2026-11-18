@@ -4,11 +4,11 @@
   Used by <Code> and <Output>; usable on its own for anything.
 -->
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
 
   let {
     title,
-    accent = 'var(--steel)',
+    accent = "var(--steel)",
     children,
     actions,
   }: {
@@ -21,12 +21,12 @@
 </script>
 
 <div class="window" style:--accent={accent}>
-  <div class="bar">
-    <span class="dots"><i></i><i></i><i></i></span>
-    {#if title}<span class="tab">{title}</span>{/if}
-    <span class="spacer"></span>
-    {@render actions?.()}
-  </div>
+  <!-- <div class="bar"> -->
+  <!--   <span class="dots"><i></i><i></i><i></i></span> -->
+  <!--   {#if title}<span class="tab">{title}</span>{/if} -->
+  <!--   <span class="spacer"></span> -->
+  <!--   {@render actions?.()} -->
+  <!-- </div> -->
   <div class="body">{@render children()}</div>
 </div>
 

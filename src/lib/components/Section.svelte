@@ -4,17 +4,17 @@
   <Section label="Why it matters" accent="var(--peach)">…</Section>
 -->
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
 
   let {
     label,
-    accent = 'var(--blue)',
+    accent = "var(--blue)",
     children,
   }: { label: string; accent?: string; children: Snippet } = $props();
 </script>
 
 <section style:--accent={accent}>
-  <h2># {label}</h2>
+  <h2>{label}</h2>
   <div class="body">{@render children()}</div>
 </section>
 

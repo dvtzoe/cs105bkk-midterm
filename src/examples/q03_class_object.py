@@ -1,10 +1,10 @@
-class Dog:                        # class = blueprint
+class Dog:  # class = schema
     def __init__(self, name):
-        self.name = name          # data per object
+        self.name = name  # data per object
     def bark(self):
         return f"{self.name} says woof"
 
-rex = Dog("Rex")                  # objects (instances)
-fido = Dog("Fido")
-print(rex.bark())
-print(fido.bark(), type(fido).__name__)
+hibiki = Dog("Hibiki")  # an object
+umika = Dog("Umika") # another object
+print(hibiki.bark())
+print(umika.bark(), type(umika).__name__)

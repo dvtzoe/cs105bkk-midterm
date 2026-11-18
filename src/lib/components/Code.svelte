@@ -11,13 +11,13 @@
                 longest line always fits the window (also in the PDF)
 -->
 <script lang="ts">
-  import { highlight } from '$lib/highlight';
-  import Window from './Window.svelte';
+  import { highlight } from "$lib/highlight";
+  import Window from "./Window.svelte";
 
   let {
     src,
     file,
-    lang = 'python',
+    lang = "python",
     mark = [],
     maxLines = 10,
     lineNumbers = true,
@@ -33,15 +33,16 @@
     size?: string;
   } = $props();
 
-  const code = $derived(src.replace(/\s+$/, ''));
-  const lines = $derived(code.split('\n').length);
-  const cols = $derived(Math.max(...code.split('\n').map((l) => l.length)));
+  const code = $derived(src.replace(/\s+$/, ""));
+  const lines = $derived(code.split("\n").length);
+  const cols = $derived(Math.max(...code.split("\n").map((l) => l.length)));
   const html = $derived(highlight(code, lang, mark));
-  const tooLong = $derived(lines > maxLines);
+  // const tooLong = $derived(lines > maxLines);
+  const tooLong = $derived(false);
 
-  $effect(() => {
-    if (tooLong) console.warn(`<Code ${file ?? ''}> has ${lines} lines (max ${maxLines})`);
-  });
+  // $effect(() => {
+  //   if (tooLong) console.warn(`<Code ${file ?? ''}> has ${lines} lines (max ${maxLines})`);
+  // });
 </script>
 
 <Window title={file}>
@@ -93,7 +94,9 @@
     padding: 24px 0;
     font-size: min(
       var(--code-size),
-      calc((100cqi - 2 * var(--pad) - 4px) / (var(--cols) * 0.6 + var(--gutter)))
+      calc(
+        (100cqi - 2 * var(--pad) - 4px) / (var(--cols) * 0.6 + var(--gutter))
+      )
     );
     line-height: 1.55;
     background: transparent !important;
