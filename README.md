@@ -1,7 +1,7 @@
 # CS105BKK midterm slides
 
 > [!WARNING]
-> AI GENERATED
+> partially AI GENERATED
 
 Svelte 5 + Vite + Bun. Maple Dark theme, Maple Mono font (ligatures on).
 
